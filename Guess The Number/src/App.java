@@ -8,15 +8,19 @@ public class App {
         int num=random.nextInt(10);
         int guessNumber=0;
         Scanner scanner=new Scanner(System.in);
+        int count=0;
+
         
       
 
         while(num!=guessNumber){
+            count++;
             System.out.println("Guess a number from 1 to 5");
             guessNumber = scanner.nextInt();
 
             if(guessNumber==num){
                 System.out.println("Your guess is correct");
+                System.out.println("this this:"+count);
             }
             else if(guessNumber>num){
                 System.out.println("Your guess is high");

@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Main{
+public class GuesstheNum{
     public static void main(String[] args) {
         int userguess=0;    //for user
         Random rand=new Random();
@@ -11,8 +11,9 @@ public class Main{
 
         
         while(userguess!=computerguess){
-            System.out.println("Guess a number from 1 to 10");
             counter++;
+            
+            System.out.println("Guess a number from 1 to 10");
             userguess=scanner.nextInt();
             
             if(userguess==computerguess){

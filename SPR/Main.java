@@ -1,12 +1,17 @@
 //Challenge1: Do it yourself again without looking
 //Challenge 2: in switch case if i enter 3 it must say invalid output
+//Challenge 3: after invalidnumber re run the program to make sure user hits valid number
+//Challenge was very challenging.It actually challenged me
+
+
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main{
     public static void main(String[] args) {
-        int computerMove=1;
-        int userMove;//Camel Case 
+        int computerMove;
+        int userMove;     //Camel Case 
 
         Scanner scanner = new Scanner(System.in);
 
@@ -16,8 +21,9 @@ public class Main{
         System.out.println("2.Rock");
 
         Random rand = new Random();
-        computerMove = rand.nextInt(3);// Random value starts with 0,1,2
-
+        computerMove = rand.nextInt(3);     // Random value starts with 0,1,2
+        
+        here:
         System.out.println("Please Enter your Move User:");
         userMove = scanner.nextInt();
        
@@ -35,11 +41,16 @@ public class Main{
      
         case 2:
              System.out.println("Computer has choose Rock");
-             break;
+             break; 
+        
+            default:
+                System.out.println("Please enter valid move");
+             
         }
 
         //User Move
-        switch(userMove){
+        if(userMove==0 || userMove==1 || userMove==2){
+          switch(userMove){
             case 0:
               System.out.println("User has choose Scissor");   
               break;    
@@ -52,16 +63,29 @@ public class Main{
                System.out.println("user has choose Rock");
                break;
           }
+        }
+
+        else{
+          System.out.println("Please enter valid move");
+          break here;
+        }
+       
 
           //Move Algroithm
-          if(computerMove==userMove){
-            System.out.println("Same Move");
+
+          if(userMove==0 || userMove==1 || userMove==2){
+            if(computerMove==userMove){
+              System.out.println("Same Move");
+            }
+            else if((computerMove==0 && userMove==1) || (computerMove==1 && userMove==2) || (computerMove==2 && userMove==0)){
+              System.out.println("Computer Wins");
+            }
+            else{
+              System.out.println("User Wins");
+            }
           }
-          else if((computerMove==0 && userMove==1) || (computerMove==1 && userMove==2) || (computerMove==2 && userMove==0)){
-            System.out.println("Computer Wins");
+          
           }
-          else{
-            System.out.println("User Wins");
-          }
-    }
+          
+          
 }

@@ -23,7 +23,7 @@ public class Main{
         Random rand = new Random();
         computerMove = rand.nextInt(3);     // Random value starts with 0,1,2
         
-        here:
+
         System.out.println("Please Enter your Move User:");
         userMove = scanner.nextInt();
        
@@ -67,7 +67,7 @@ public class Main{
 
         else{
           System.out.println("Please enter valid move");
-          break here;
+         
         }
        
 
